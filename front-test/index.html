@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>CommuniSense</title>
+
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="grid-container">
+    <!-- Header -->
+    <!-- <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="material-icons-outlined">email</span>
+          <span class="material-icons-outlined">account_circle</span>
+        </div>
+      </header> -->
+    <!-- End Header -->
+
+    <!-- Sidebar -->
+    <!-- <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">shopping_cart</span> Cyber
+            Ciphers
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()"
+            >close</span
+          >
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">inventory_2</span> Products
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">category</span> Categories
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">groups</span> Customers
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">fact_check</span> Inventory
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">poll</span> Reports
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">settings</span> Settings
+            </a>
+          </li>
+        </ul>
+      </aside> -->
+    <!-- End Sidebar -->
+
+    <!-- Main -->
+    <main class="main-container">
+      <div class="main-container-head">
+
+        <div class="main-title">
+          <h2>CommuniSense <h4 class="subtitle">By Cyber Ciphers</h4>
+          </h2>
+        </div>
+
+        <div class="logos">
+          <div class="left-logo">
+            <img src="assets/images/chd-police.png" alt="Left Logo" class="logo-img">
+          </div>
+          <div class="right-logo">
+            <img src="assets/images/infosys.png" alt="Right Logo" class="logo-img">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="input-div">
+        <form id="input_topic" class="form-container">
+          <input type="text" id="textField" class="textField" placeholder="Enter the topic" />
+          <button type="button" onclick="search()">
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <h3>Video Count</h3>
+            <span class="material-icons-outlined">inventory_2</span>
+          </div>
+          <h1 id="video_count">0</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>Comments Fetched</h3>
+            <span class="material-icons-outlined">category</span>
+          </div>
+          <h1 id="comments_count">0</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>Total Views</h3>
+            <span class="material-icons-outlined">groups</span>
+          </div>
+          <h1 id="views_count">0</h1>
+        </div>
+      </div>
+
+      <div class="lineChartDiv">
+        <div class="card">
+          <h2>Emotions Time Series Evaluation</h2>
+          <div id='lineChart' class=" main-cards"> </div>
+        </div>
+      </div>
+
+      <div class="charts">
+
+        <div class="chart-pie-bar">
+          <div>
+            <div id='pieChart' class="card main-cards"></div>
+          </div>
+          <div>
+            <div id='barChart' class=" card main-cards"></div>
+          </div>
+        </div>
+        <!--<div class="charts-card">
+          <h2 class="chart-title">Purchase and Sales Orders</h2>
+          <div id="area-chart"></div>
+        </div>-->
+      </div>
+
+      <div class="card">
+        <div class="table-div">
+          <h2>Comment Emotion Analysis</h2>
+
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th>Comment</th>
+                <th>Like Count</th>
+                <th>Reply Count</th>
+                <th>Emotion</th>
+                <th id="comment_sentiment_score">Score</th>
+              </tr>
+            </thead>
+            <tbody id="dataTableRow">
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="card">
+        <div class="table-div">
+          <h2>Psycological Emotion Evaluation</h2>
+
+          <table id="dataTableExtended">
+            <thead>
+              <tr>
+                <th>Comment</th>
+                <th>Mentality</th>
+                <th id="comment_sentiment_score">Score</th>
+              </tr>
+            </thead>
+            <tbody id="dataTableRowExtended">
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+    <!-- End Main -->
+
+  </div>
+
+  <div id="loadingModal">
+    <div id="loadingSpinner"></div>
+  </div>
+  <!-- Scripts -->
+  <!-- Plotly Charts -->
+  <script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+  <script src="js/barChart.js"></script>
+  <script src="js/pieChart.js"></script>
+  <script src="js/lineChart.js"></script>
+  <!-- ApexCharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+  <!-- Custom JS -->
+  <script src="./js/scripts.js"></script>
+  <script src="index.js"></script>
+  
+
+
+
+</body>
+
+</html>

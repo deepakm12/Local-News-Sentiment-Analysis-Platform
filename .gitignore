@@ -1,0 +1,41 @@
+# Python-related ignores
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+myenv/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Backend specific ignores
+/backend/__pycache__/
+/backend/.env
+
+# Frontend specific ignores
+/frontend/node_modules/
+/frontend/.env
+/frontend/.eslintcache
+/frontend/.prettiercache
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+pip-wheel-metadata/
